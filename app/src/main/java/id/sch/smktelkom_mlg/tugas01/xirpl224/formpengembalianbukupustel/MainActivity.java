@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etNama;
     EditText etBuku;
     Button bOk;
-    TextView tvHasil, tvStatus;
+    TextView tvNama, tvStatus, tvJudul;
     RadioButton rbTw, rbTb;
 
     @Override
@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         etNama = (EditText) findViewById(R.id.editTextNama);
         etBuku = (EditText) findViewById(R.id.editTextBuku);
         bOk = (Button) findViewById(R.id.buttonOk);
-        tvHasil = (TextView) findViewById(R.id.textViewHasil);
+        tvNama = (TextView) findViewById(R.id.textViewNama);
+        tvJudul = (TextView) findViewById(R.id.textViewJudul);
         tvStatus = (TextView) findViewById(R.id.textViewStatus);
         rbTw = (RadioButton) findViewById(R.id.radioButtonTw);
         rbTb = (RadioButton) findViewById(R.id.radioButtonTb);
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         if (status == null) {
             tvStatus.setText("Belum Memilih Status");
         } else {
-            tvStatus.setText("Status Anda  : " + status);
+            tvStatus.setText("Status Anda       : " + status);
         }
     }
 
@@ -61,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
             String nama = etNama.getText().toString();
             String buku = etBuku.getText().toString();
 
-            tvHasil.setText("Nama : " + nama + "Judul Buku : " + buku);
+            tvNama.setText("Nama       : " + nama);
+            tvJudul.setText("Judul Buku : " + buku);
         }
     }
 
