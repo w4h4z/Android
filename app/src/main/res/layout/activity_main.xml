@@ -17,11 +17,13 @@
             android:layout_width="match_parent"
             android:layout_height="134dp"
             android:layout_gravity="top|center_vertical"
+            android:layout_weight="1"
             android:src="@drawable/pustel" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:layout_weight="1">
         <EditText
             android:id="@+id/editTextNama"
             android:layout_width="match_parent"
@@ -32,18 +34,21 @@
         <TextView
             android:id="@+id/textViewKelas"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:text="Jurusan" />
 
         <Spinner
             android:id="@+id/spinnerJurusan"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:entries="@array/jurusan" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:layout_weight="1">
         <EditText
             android:id="@+id/editTextBuku"
             android:layout_width="match_parent"
@@ -54,12 +59,14 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:text="Status" />
 
         <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
             <RadioButton
                 android:id="@+id/radioButtonTw"
@@ -79,11 +86,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/editTextTelat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Telat Hari" />
             </android.support.design.widget.TextInputLayout>
 
         </RadioGroup>
@@ -91,47 +93,71 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:text="Tanggapan Isi Buku" />
 
         <CheckBox
             android:id="@+id/checkBoxM"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:checked="false"
             android:text="Menarik" />
 
         <CheckBox
             android:id="@+id/checkBoxB"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:checked="false"
             android:text="Biasa Saja" />
 
         <CheckBox
             android:id="@+id/Mb"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:checked="false"
             android:text="Membosankan" />
 
         <Button
             android:id="@+id/buttonOk"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:text="Ok" />
 
         <TextView
-            android:id="@+id/textViewHasil"
+            android:id="@+id/textViewNama"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            tools:text="Hasil" />
+
+        <TextView
+            android:id="@+id/textViewJurusan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Hasil" />
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textViewJudul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/textViewStatus"
             android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textViewTanggapan"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Status" />
+            android:layout_weight="1" />
 
     </LinearLayout>
 </ScrollView>

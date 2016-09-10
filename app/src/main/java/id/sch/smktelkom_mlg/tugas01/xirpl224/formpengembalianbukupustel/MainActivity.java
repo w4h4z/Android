@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,8 +14,9 @@ public class MainActivity extends AppCompatActivity {
     EditText etNama;
     EditText etBuku;
     Button bOk;
-    TextView tvNama, tvStatus, tvJudul;
+    TextView tvNama, tvStatus, tvJudul, tvJurusan;
     RadioButton rbTw, rbTb;
+    Spinner spJurusan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +29,10 @@ public class MainActivity extends AppCompatActivity {
         tvNama = (TextView) findViewById(R.id.textViewNama);
         tvJudul = (TextView) findViewById(R.id.textViewJudul);
         tvStatus = (TextView) findViewById(R.id.textViewStatus);
+        tvJurusan = (TextView) findViewById(R.id.textViewJurusan);
         rbTw = (RadioButton) findViewById(R.id.radioButtonTw);
         rbTb = (RadioButton) findViewById(R.id.radioButtonTb);
+        spJurusan = (Spinner) findViewById(R.id.spinnerJurusan);
 
 
         bOk.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         if (status == null) {
             tvStatus.setText("Belum Memilih Status");
         } else {
-            tvStatus.setText("Status Anda       : " + status);
+            tvStatus.setText("Status Anda : " + status);
         }
     }
 
@@ -62,8 +66,9 @@ public class MainActivity extends AppCompatActivity {
             String nama = etNama.getText().toString();
             String buku = etBuku.getText().toString();
 
-            tvNama.setText("Nama       : " + nama);
+            tvNama.setText("Nama : " + nama);
             tvJudul.setText("Judul Buku : " + buku);
+            tvJurusan.setText("Jurusan : " + spJurusan.getSelectedItem().toString());
         }
     }
 
