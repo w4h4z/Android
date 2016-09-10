@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etBuku;
     Button bOk;
     TextView tvHasil;
+    RadioGroup rgStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         etBuku = (EditText) findViewById(R.id.editTextBuku);
         bOk = (Button) findViewById(R.id.buttonOk);
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
+        rgStatus = (RadioGroup) findViewById(R.id.radioGroupStatus);
 
         bOk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         boolean valid = true;
         String nama = etNama.getText().toString();
         String buku = etBuku.getText().toString();
+        String hasil = null;
 
         if (nama.isEmpty()) {
             etNama.setError("Nama Belum diisi");
@@ -54,6 +59,18 @@ public class MainActivity extends AppCompatActivity {
             valid = false;
         } else {
             etNama.setError(null);
+        }
+
+        if (rgStatus.getCheckedRadioButtonId() != -1) {
+            RadioButton rb = (RadioButton)
+                    findViewById(rgStatus.getCheckedRadioButtonId());
+            hasil = rb.getText().toString();
+        }
+
+        if (hasil == null) {
+            tvHasil.setText("Belum Memilih Status");
+        } else {
+            tvHasil.setText("Jurusan Anda : " + hasil);
         }
 
         return valid;
