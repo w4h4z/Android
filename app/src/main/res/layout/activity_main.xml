@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -17,53 +18,72 @@
             android:layout_gravity="top|center_vertical"
             android:src="@drawable/pustel" />
 
-        <EditText
-            android:id="@+id/editText"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/textView"
+            android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/editTextNama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Text" />
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:hint="Nama" />
+        </android.support.design.widget.TextInputLayout>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textViewKelas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Text" />
+            android:text="Kelas" />
+
+        <Spinner
+            android:id="@+id/spinnerAngkatan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/angkatan" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/editTextBuku"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Judul Buku" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textViewStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Status" />
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/radioButtonTw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="New RadioButton" />
+                android:checked="false"
+                android:text="Tepat Waktu" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/radioButtonTb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="New RadioButton" />
+                android:checked="false"
+                android:text="Terlambat" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editTextTelat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Telat Hari" />
+            </android.support.design.widget.TextInputLayout>
 
         </RadioGroup>
 
@@ -71,37 +91,46 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Text" />
+            android:text="Tanggapan Isi Buku" />
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/checkBoxM"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New CheckBox" />
+            android:checked="false"
+            android:text="Menarik" />
 
         <CheckBox
-            android:id="@+id/checkBox2"
+            android:id="@+id/checkBoxB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New CheckBox" />
+            android:checked="false"
+            android:text="Biasa Saja" />
 
         <CheckBox
-            android:id="@+id/checkBox3"
+            android:id="@+id/Mb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New CheckBox" />
+            android:checked="false"
+            android:text="Membosankan" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonOk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Button" />
+            android:text="Ok" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonRst"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Button" />
+            android:text="Reset" />
+
+        <TextView
+            android:id="@+id/textViewHasil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Hasil" />
 
     </LinearLayout>
 </ScrollView>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="kelas">
+    <string-array name="angkatan">
         <item>X</item>
         <item>XI</item>
         <item>XII</item>
