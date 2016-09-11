@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
@@ -14,9 +15,10 @@ public class MainActivity extends AppCompatActivity {
     EditText etNama;
     EditText etBuku;
     Button bOk;
-    TextView tvNama, tvStatus, tvJudul, tvJurusan;
+    TextView tvNama, tvStatus, tvJudul, tvJurusan, tvTanggapan;
     RadioButton rbTw, rbTb;
     Spinner spJurusan;
+    CheckBox cbM, cbB, cbMb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +32,13 @@ public class MainActivity extends AppCompatActivity {
         tvJudul = (TextView) findViewById(R.id.textViewJudul);
         tvStatus = (TextView) findViewById(R.id.textViewStatus);
         tvJurusan = (TextView) findViewById(R.id.textViewJurusan);
+        tvTanggapan = (TextView) findViewById(R.id.textViewTanggapan);
         rbTw = (RadioButton) findViewById(R.id.radioButtonTw);
         rbTb = (RadioButton) findViewById(R.id.radioButtonTb);
         spJurusan = (Spinner) findViewById(R.id.spinnerJurusan);
+        cbM = (CheckBox) findViewById(R.id.checkBoxM);
+        cbB = (CheckBox) findViewById(R.id.CheckBoxB);
+        cbMb = (CheckBox) findViewById(R.id.checkBoxMb);
 
 
         bOk.setOnClickListener(new View.OnClickListener() {
@@ -40,9 +46,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 doProcess();
                 doClick();
+                doCoba();
             }
         });
 
+    }
+
+    private void doCoba() {
+        String hasil = "Tanggapan Anda : ";
+        int startlen = hasil.length();
+        if (cbM.isChecked()) hasil += cbM.getText() + "\n";
+        if (cbB.isChecked()) hasil += cbB.getText() + "\n";
+        if (cbMb.isChecked()) hasil += cbMb.getText() + "\n";
+
+        if (hasil.length() == startlen) hasil += "Tidak Ada Tanggapan";
+
+        tvTanggapan.setText(hasil);
     }
 
     private void doClick() {
@@ -68,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
             tvNama.setText("Nama : " + nama);
             tvJudul.setText("Judul Buku : " + buku);
-            tvJurusan.setText("Jurusan : " + spJurusan.getSelectedItem().toString());
+            tvJurusan.setText("Kelas : " + spJurusan.getSelectedItem().toString());
         }
     }
 
