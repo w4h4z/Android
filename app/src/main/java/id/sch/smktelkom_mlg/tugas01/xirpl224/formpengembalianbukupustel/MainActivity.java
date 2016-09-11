@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etBuku;
     Button bOk;
     TextView tvNama, tvStatus, tvJudul, tvJurusan, tvTanggapan;
+    RadioGroup rgStts;
     RadioButton rbTw, rbTb;
     Spinner spJurusan;
     CheckBox cbM, cbB, cbMb;
@@ -39,6 +41,18 @@ public class MainActivity extends AppCompatActivity {
         cbM = (CheckBox) findViewById(R.id.checkBoxM);
         cbB = (CheckBox) findViewById(R.id.CheckBoxB);
         cbMb = (CheckBox) findViewById(R.id.checkBoxMb);
+        rgStts = (RadioGroup) findViewById(R.id.radioGroupStatus);
+
+        rgStts.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int i) {
+                if (i == R.id.radioButtonTw) {
+                    findViewById(R.id.editTextTelat).setVisibility(View.GONE);
+                } else {
+                    findViewById(R.id.editTextTelat).setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
 
         bOk.setOnClickListener(new View.OnClickListener() {
