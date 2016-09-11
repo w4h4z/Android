@@ -13,10 +13,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText etNama;
-    EditText etBuku;
+    EditText etNama, etBuku, etTelat;
     Button bOk;
-    TextView tvNama, tvStatus, tvJudul, tvJurusan, tvTanggapan;
+    TextView tvNama, tvStatus, tvJudul, tvJurusan, tvTanggapan, tvDenda, tvTelat;
     RadioGroup rgStts;
     RadioButton rbTw, rbTb;
     Spinner spJurusan;
@@ -42,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         cbB = (CheckBox) findViewById(R.id.CheckBoxB);
         cbMb = (CheckBox) findViewById(R.id.checkBoxMb);
         rgStts = (RadioGroup) findViewById(R.id.radioGroupStatus);
+        tvDenda = (TextView) findViewById(R.id.textViewDenda);
+        tvTelat = (TextView) findViewById(R.id.textViewTelat);
+        etTelat = (EditText) findViewById(R.id.editTextTelat);
 
         rgStts.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -98,10 +100,15 @@ public class MainActivity extends AppCompatActivity {
         if (isValid()) {
             String nama = etNama.getText().toString();
             String buku = etBuku.getText().toString();
+            String telat = etTelat.getText().toString();
+            int denda = Integer.parseInt(etTelat.getText().toString());
+            int d = 500 * denda;
 
             tvNama.setText("Nama : " + nama);
             tvJudul.setText("Judul Buku : " + buku);
             tvJurusan.setText("Kelas : " + spJurusan.getSelectedItem().toString());
+            tvTelat.setText("Telat : " + telat);
+            tvDenda.setText("Denda : Rp" + d);
         }
     }
 

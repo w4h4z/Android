@@ -169,6 +169,18 @@
             android:layout_weight="1" />
 
         <TextView
+            android:id="@+id/textViewTelat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textViewDenda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
             android:id="@+id/textViewTanggapan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
